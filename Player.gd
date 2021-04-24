@@ -4,8 +4,10 @@ extends KinematicBody2D
 const MOVE_SPEED = 500
 const JUMP_ACCEL = 500
 const GRAVITY = 20
+const JUMP_CD = 0.3
 
 var y_velocity = 0
+var jump_cd = 0
 
 var is_dead = false
 
@@ -24,11 +26,13 @@ func _physics_process(delta):
 	if move_dir == 1:
 		$Sprite.flip_h = true
 		
-		
+	jump_cd -= delta
+	
 	var grounded = is_on_floor()
 	y_velocity += GRAVITY
-	if grounded and Input.is_action_just_pressed("jump"):
+	if jump_cd < 0 and Input.is_action_just_pressed("jump"):
 		y_velocity -= JUMP_ACCEL
+		jump_cd = JUMP_CD
 	if grounded and y_velocity >= 5:
 		y_velocity = 5
 	

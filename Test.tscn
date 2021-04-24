@@ -1,12 +1,12 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=13 format=2]
 
-[ext_resource path="res://icon.png" type="Texture" id=1]
 [ext_resource path="res://Player.gd" type="Script" id=2]
 [ext_resource path="res://Graphics/DeathParticle.png" type="Texture" id=3]
-[ext_resource path="res://DeadlyArea.gd" type="Script" id=4]
+[ext_resource path="res://Graphics/platform.png" type="Texture" id=4]
 [ext_resource path="res://BuildingBlocks/Ground.tscn" type="PackedScene" id=5]
 [ext_resource path="res://LevelBoundaries.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Graphics/Player.png" type="Texture" id=7]
+[ext_resource path="res://BuildingBlocks/Spikes.tscn" type="PackedScene" id=8]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends Node2D
@@ -77,47 +77,16 @@ func _physics_process(delta):
 		self.position.y = player.position.y
 "
 
-[sub_resource type="GDScript" id=5]
-script/source = "extends Sprite
+[sub_resource type="GDScript" id=11]
+script/source = "extends Node2D
 
-const DOOM_SPEED = 50
+const DOOM_SPEED = 300
 
 func _physics_process(delta):
+	var player = get_tree().get_nodes_in_group(\"player\")[0]
+	if player.is_dead: return
 	self.position.y += DOOM_SPEED * delta
 "
-
-[sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 31.9227, 41.2687 )
-
-[sub_resource type="GDScript" id=7]
-script/source = "extends Sprite
-
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = \"text\"
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-
-
-func _on_Area2D_body_entered(body):
-	if body.is_in_group(\"player\"):
-		body.die()
-"
-
-[sub_resource type="RectangleShape2D" id=8]
-extents = Vector2( 28.8861, 31.2434 )
-
-[sub_resource type="RectangleShape2D" id=9]
-extents = Vector2( 10, 29.864 )
 
 [node name="Test" type="Node2D"]
 script = SubResource( 1 )
@@ -151,46 +120,86 @@ position = Vector2( 513.566, -549.659 )
 current = true
 script = SubResource( 4 )
 
-[node name="ImpendingDoom" type="Sprite" parent="."]
+[node name="Ground" parent="Camera2D" instance=ExtResource( 5 )]
+position = Vector2( 10.5762, -339.628 )
+scale = Vector2( 2.30244, 0.140047 )
+
+[node name="ImpendingDoom" type="Node2D" parent="."]
+script = SubResource( 11 )
+
+[node name="Sprite" type="Sprite" parent="ImpendingDoom"]
 modulate = Color( 1, 0, 0, 1 )
-position = Vector2( 520.394, 0 )
-scale = Vector2( 20.0093, 1 )
-texture = ExtResource( 1 )
-script = SubResource( 5 )
+position = Vector2( 501.518, -363.38 )
+scale = Vector2( 2.48537, 1.61705 )
+texture = ExtResource( 4 )
 
-[node name="Area2D" type="Area2D" parent="ImpendingDoom"]
-script = ExtResource( 4 )
+[node name="Spikes" type="Node2D" parent="ImpendingDoom"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ImpendingDoom/Area2D"]
-shape = SubResource( 6 )
+[node name="Spikes2" parent="ImpendingDoom/Spikes" instance=ExtResource( 8 )]
+position = Vector2( 999.379, 20.8716 )
+rotation = -3.14159
+
+[node name="Spikes3" parent="ImpendingDoom/Spikes" instance=ExtResource( 8 )]
+position = Vector2( 925.492, 20.8716 )
+rotation = -3.14159
+
+[node name="Spikes5" parent="ImpendingDoom/Spikes" instance=ExtResource( 8 )]
+position = Vector2( 849.483, 20.8716 )
+rotation = -3.14159
+
+[node name="Spikes4" parent="ImpendingDoom/Spikes" instance=ExtResource( 8 )]
+position = Vector2( 775.596, 20.8716 )
+rotation = -3.14159
+
+[node name="Spikes9" parent="ImpendingDoom/Spikes" instance=ExtResource( 8 )]
+position = Vector2( 701.64, 20.8716 )
+rotation = -3.14159
+
+[node name="Spikes8" parent="ImpendingDoom/Spikes" instance=ExtResource( 8 )]
+position = Vector2( 627.754, 20.8716 )
+rotation = -3.14159
+
+[node name="Spikes7" parent="ImpendingDoom/Spikes" instance=ExtResource( 8 )]
+position = Vector2( 551.745, 20.8716 )
+rotation = -3.14159
+
+[node name="Spikes6" parent="ImpendingDoom/Spikes" instance=ExtResource( 8 )]
+position = Vector2( 477.858, 20.8716 )
+rotation = -3.14159
+
+[node name="Spikes17" parent="ImpendingDoom/Spikes" instance=ExtResource( 8 )]
+position = Vector2( 403.28, 20.8716 )
+rotation = -3.14159
+
+[node name="Spikes16" parent="ImpendingDoom/Spikes" instance=ExtResource( 8 )]
+position = Vector2( 329.393, 20.8716 )
+rotation = -3.14159
+
+[node name="Spikes15" parent="ImpendingDoom/Spikes" instance=ExtResource( 8 )]
+position = Vector2( 253.384, 20.8716 )
+rotation = -3.14159
+
+[node name="Spikes14" parent="ImpendingDoom/Spikes" instance=ExtResource( 8 )]
+position = Vector2( 179.497, 20.8716 )
+rotation = -3.14159
+
+[node name="Spikes13" parent="ImpendingDoom/Spikes" instance=ExtResource( 8 )]
+position = Vector2( 105.542, 20.8716 )
+rotation = -3.14159
+
+[node name="Spikes12" parent="ImpendingDoom/Spikes" instance=ExtResource( 8 )]
+position = Vector2( 31.6548, 20.8716 )
+rotation = -3.14159
+
+[node name="Spikes11" parent="ImpendingDoom/Spikes" instance=ExtResource( 8 )]
+position = Vector2( -44.3543, 20.8716 )
+rotation = -3.14159
+
+[node name="Spikes10" parent="ImpendingDoom/Spikes" instance=ExtResource( 8 )]
+position = Vector2( -118.241, 20.8716 )
+rotation = -3.14159
 
 [node name="Levels" type="Node2D" parent="."]
 
-[node name="Level" type="Node2D" parent="Levels"]
-
-[node name="Ground" parent="Levels/Level" instance=ExtResource( 5 )]
-
-[node name="Spikes" type="Sprite" parent="Levels/Level"]
-modulate = Color( 1, 0, 0, 1 )
-position = Vector2( 652.891, 415.826 )
-scale = Vector2( 0.713988, 1.17521 )
-texture = ExtResource( 1 )
-script = SubResource( 7 )
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Levels/Level/Spikes"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Levels/Level/Spikes/StaticBody2D"]
-position = Vector2( 1.51367, 0 )
-shape = SubResource( 8 )
-
-[node name="Area2D" type="Area2D" parent="Levels/Level/Spikes" groups=[
-"death_trigger",
-]]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Levels/Level/Spikes/Area2D"]
-position = Vector2( -28.7592, 0.919617 )
-shape = SubResource( 9 )
-
 [node name="Boundaries" parent="Levels" instance=ExtResource( 6 )]
 position = Vector2( -1.00488, 4.50752 )
-[connection signal="body_entered" from="Levels/Level/Spikes/Area2D" to="Levels/Level/Spikes" method="_on_Area2D_body_entered"]

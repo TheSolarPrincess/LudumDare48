@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Graphics/Kind and Rich - Personal Use.otf" type="DynamicFontData" id=1]
 [ext_resource path="res://Player.gd" type="Script" id=2]
@@ -137,6 +137,8 @@ size = 60
 outline_size = 3
 outline_color = Color( 0, 0, 0, 0.905882 )
 font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=15]
 
 [node name="Test" type="Node2D"]
 script = SubResource( 1 )
@@ -314,6 +316,29 @@ text = "Game over!
 Coins collected: 
 
 Press space to restart"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Hint" type="Panel" parent="."]
+margin_left = 70.5485
+margin_top = 622.745
+margin_right = 368.548
+margin_bottom = 805.745
+custom_styles/panel = SubResource( 15 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="Hint"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -1.0
+custom_fonts/font = SubResource( 14 )
+text = "Move: A - D
+Jump: W or SPACE"
 align = 1
 valign = 1
 __meta__ = {

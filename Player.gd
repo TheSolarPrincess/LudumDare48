@@ -41,3 +41,4 @@ func die():
 	$Sprite.visible = false
 	$Particles2D.emitting = true
 	is_dead = true
+	get_tree().get_nodes_in_group("gameoverscreen")[0].show(get_tree().get_nodes_in_group("UI")[0].score)

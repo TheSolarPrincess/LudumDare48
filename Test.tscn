@@ -1,5 +1,6 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=17 format=2]
 
+[ext_resource path="res://Graphics/Kind and Rich - Personal Use.otf" type="DynamicFontData" id=1]
 [ext_resource path="res://Player.gd" type="Script" id=2]
 [ext_resource path="res://Graphics/DeathParticle.png" type="Texture" id=3]
 [ext_resource path="res://Graphics/platform.png" type="Texture" id=4]
@@ -81,7 +82,7 @@ func _physics_process(delta):
 script/source = "extends Node2D
 
 const DOOM_SPEED_ONSCREEN = 60
-const DOOM_SPEED_OFFSCREEN = 300
+const DOOM_SPEED_OFFSCREEN = 200
 
 
 func _physics_process(delta):
@@ -89,15 +90,53 @@ func _physics_process(delta):
 	if player.is_dead: return
 	
 	var camera = get_tree().get_nodes_in_group(\"camera\")[0]
-	print ( camera.position.y - self.position.y)
+	#print ( camera.position.y - self.position.y)
 	var on_screen = camera.position.y - self.position.y < get_viewport().size.y / 2
 	if on_screen:
-		print(\"onscreen\")
+		#print(\"onscreen\")
 		self.position.y += DOOM_SPEED_ONSCREEN * delta
 	else:
-		print(\"offscreen\")
+		#print(\"offscreen\")
 		self.position.y += DOOM_SPEED_OFFSCREEN * delta
 "
+
+[sub_resource type="GDScript" id=12]
+script/source = "extends CanvasLayer
+
+var score = 0
+
+func update():
+	$\"Panel/RichTextLabel\".bbcode_text = \"[center]\" + str(score) + \" coins[/center]\"
+	
+func add_coin(value):
+	score += value
+	update()
+"
+
+[sub_resource type="GDScript" id=13]
+script/source = "extends CanvasLayer
+
+func show(coins):
+	$Screen.visible = true
+	$Screen/Label.text =\\
+	\"\"\"
+	Game over!
+
+	Coins collected: %s
+	
+	Press space to restart
+	\"\"\" % str(coins)
+	
+func _process(delta):
+	if Input.is_action_just_pressed(\"jump\") and $Screen.visible:
+		get_tree().reload_current_scene()
+"
+
+[sub_resource type="DynamicFont" id=14]
+size = 60
+outline_size = 3
+outline_color = Color( 0, 0, 0, 0.905882 )
+font_data = ExtResource( 1 )
 
 [node name="Test" type="Node2D"]
 script = SubResource( 1 )
@@ -105,7 +144,7 @@ script = SubResource( 1 )
 [node name="Player" type="KinematicBody2D" parent="." groups=[
 "player",
 ]]
-position = Vector2( 500.085, 157.816 )
+position = Vector2( 500.085, 396.982 )
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
@@ -138,6 +177,7 @@ position = Vector2( 10.5762, -339.628 )
 scale = Vector2( 2.30244, 0.140047 )
 
 [node name="ImpendingDoom" type="Node2D" parent="."]
+position = Vector2( 0, 286.999 )
 script = SubResource( 11 )
 
 [node name="Sprite" type="Sprite" parent="ImpendingDoom"]
@@ -216,3 +256,66 @@ rotation = -3.14159
 
 [node name="Boundaries" parent="Levels" instance=ExtResource( 6 )]
 position = Vector2( -1.00488, 4.50752 )
+
+[node name="UI" type="CanvasLayer" parent="." groups=[
+"UI",
+]]
+script = SubResource( 12 )
+
+[node name="Panel" type="Panel" parent="UI"]
+margin_left = 27.0
+margin_top = 17.0
+margin_right = 142.0
+margin_bottom = 46.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="UI/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -1.0
+margin_top = 7.0
+margin_right = -1.0
+margin_bottom = -6.0
+bbcode_enabled = true
+bbcode_text = "[center]0 coins[/center]"
+text = "0 coins"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GameOverScreen" type="CanvasLayer" parent="." groups=[
+"gameoverscreen",
+]]
+script = SubResource( 13 )
+
+[node name="Screen" type="Panel" parent="GameOverScreen"]
+visible = false
+modulate = Color( 1, 1, 1, 0.866667 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="GameOverScreen/Screen"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -181.0
+margin_top = -109.0
+margin_right = 181.0
+margin_bottom = 109.0
+custom_fonts/font = SubResource( 14 )
+text = "Game over!
+
+Coins collected: 
+
+Press space to restart"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}

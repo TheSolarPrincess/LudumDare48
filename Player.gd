@@ -7,7 +7,11 @@ const GRAVITY = 20
 
 var y_velocity = 0
 
+var is_dead = false
+
 func _physics_process(delta):
+	if is_dead: return
+	
 	var move_dir = 0
 	if Input.is_action_pressed("move_left"):
 		move_dir -= 1
@@ -22,3 +26,8 @@ func _physics_process(delta):
 	if grounded and y_velocity >= 5:
 		y_velocity = 5
 	
+
+func die():
+	$Sprite.visible = false
+	$Particles2D.emitting = true
+	is_dead = true

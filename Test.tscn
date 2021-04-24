@@ -179,7 +179,7 @@ position = Vector2( 10.5762, -339.628 )
 scale = Vector2( 2.30244, 0.140047 )
 
 [node name="ImpendingDoom" type="Node2D" parent="."]
-position = Vector2( 0, 286.999 )
+position = Vector2( 0, 157.368 )
 script = SubResource( 11 )
 
 [node name="Sprite" type="Sprite" parent="ImpendingDoom"]
@@ -259,6 +259,10 @@ rotation = -3.14159
 [node name="Boundaries" parent="Levels" instance=ExtResource( 6 )]
 position = Vector2( -1.00488, 4.50752 )
 
+[node name="Ground" parent="Levels" instance=ExtResource( 5 )]
+position = Vector2( 502.851, 557.527 )
+scale = Vector2( 0.378596, 0.140047 )
+
 [node name="UI" type="CanvasLayer" parent="." groups=[
 "UI",
 ]]
@@ -323,10 +327,10 @@ __meta__ = {
 }
 
 [node name="Hint" type="Panel" parent="."]
-margin_left = 70.5485
-margin_top = 622.745
-margin_right = 368.548
-margin_bottom = 805.745
+margin_left = 34.3722
+margin_top = 360.468
+margin_right = 332.372
+margin_bottom = 543.468
 custom_styles/panel = SubResource( 15 )
 __meta__ = {
 "_edit_use_anchors_": false

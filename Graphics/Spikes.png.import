@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/DeathParticle.png-5075d464d6a8ca1c9066d1ebb0bdd6d5.stex"
+path="res://.import/Spikes.png-4c885dd185c127115f0bac615fdbc200.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://DeathParticle.png"
-dest_files=[ "res://.import/DeathParticle.png-5075d464d6a8ca1c9066d1ebb0bdd6d5.stex" ]
+source_file="res://Graphics/Spikes.png"
+dest_files=[ "res://.import/Spikes.png-4c885dd185c127115f0bac615fdbc200.stex" ]
 
 [params]
 

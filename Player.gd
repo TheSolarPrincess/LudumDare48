@@ -19,6 +19,12 @@ func _physics_process(delta):
 		move_dir += 1
 	move_and_slide(Vector2(MOVE_SPEED*move_dir, y_velocity), Vector2(0,-1 ))
 		
+	if move_dir == -1:
+		$Sprite.flip_h = false
+	if move_dir == 1:
+		$Sprite.flip_h = true
+		
+		
 	var grounded = is_on_floor()
 	y_velocity += GRAVITY
 	if grounded and Input.is_action_just_pressed("jump"):

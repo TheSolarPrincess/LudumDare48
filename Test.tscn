@@ -1,12 +1,14 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://icon.png" type="Texture" id=1]
 [ext_resource path="res://Player.gd" type="Script" id=2]
-[ext_resource path="res://DeathParticle.png" type="Texture" id=3]
+[ext_resource path="res://Graphics/DeathParticle.png" type="Texture" id=3]
 [ext_resource path="res://DeadlyArea.gd" type="Script" id=4]
 [ext_resource path="res://BuildingBlocks/Ground.tscn" type="PackedScene" id=5]
+[ext_resource path="res://LevelBoundaries.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Graphics/Player.png" type="Texture" id=7]
 
-[sub_resource type="GDScript" id=10]
+[sub_resource type="GDScript" id=1]
 script/source = "extends Node2D
 
 var generation_sweep = 0
@@ -41,11 +43,17 @@ func generate_next_chunk():
 	var level = level_prefab.instance()
 	$Levels.add_child(level)
 	level.position = Vector2(0, generation_sweep)
+	
+	var boundaries_prefab = preload(\"res://LevelBoundaries.tscn\")
+	var boundaries = boundaries_prefab.instance()
+	$Levels.add_child(boundaries)
+	boundaries.position = Vector2(0, generation_sweep)
+	
 	generation_sweep += get_viewport().size.y # level.height
 "
 
-[sub_resource type="CircleShape2D" id=2]
-radius = 33.8581
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 31.3849, 32.3355 )
 
 [sub_resource type="ParticlesMaterial" id=3]
 emission_shape = 1
@@ -59,7 +67,7 @@ angular_velocity_random = 0.64
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 
-[sub_resource type="GDScript" id=7]
+[sub_resource type="GDScript" id=4]
 script/source = "extends Camera2D
 
 
@@ -69,7 +77,7 @@ func _physics_process(delta):
 		self.position.y = player.position.y
 "
 
-[sub_resource type="GDScript" id=9]
+[sub_resource type="GDScript" id=5]
 script/source = "extends Sprite
 
 const DOOM_SPEED = 50
@@ -78,10 +86,10 @@ func _physics_process(delta):
 	self.position.y += DOOM_SPEED * delta
 "
 
-[sub_resource type="RectangleShape2D" id=8]
+[sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 31.9227, 41.2687 )
 
-[sub_resource type="GDScript" id=6]
+[sub_resource type="GDScript" id=7]
 script/source = "extends Sprite
 
 
@@ -105,14 +113,14 @@ func _on_Area2D_body_entered(body):
 		body.die()
 "
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=8]
 extents = Vector2( 28.8861, 31.2434 )
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=9]
 extents = Vector2( 10, 29.864 )
 
 [node name="Test" type="Node2D"]
-script = SubResource( 10 )
+script = SubResource( 1 )
 
 [node name="Player" type="KinematicBody2D" parent="." groups=[
 "player",
@@ -121,10 +129,12 @@ position = Vector2( 500.085, 157.816 )
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-shape = SubResource( 2 )
+shape = SubResource( 10 )
 
 [node name="Sprite" type="Sprite" parent="Player"]
-texture = ExtResource( 1 )
+position = Vector2( 0.429321, -0.377869 )
+scale = Vector2( 0.322099, 0.322099 )
+texture = ExtResource( 7 )
 
 [node name="Particles2D" type="Particles2D" parent="Player"]
 position = Vector2( 0.52478, 0.524811 )
@@ -139,20 +149,20 @@ texture = ExtResource( 3 )
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 513.566, -549.659 )
 current = true
-script = SubResource( 7 )
+script = SubResource( 4 )
 
 [node name="ImpendingDoom" type="Sprite" parent="."]
 modulate = Color( 1, 0, 0, 1 )
 position = Vector2( 520.394, 0 )
 scale = Vector2( 20.0093, 1 )
 texture = ExtResource( 1 )
-script = SubResource( 9 )
+script = SubResource( 5 )
 
 [node name="Area2D" type="Area2D" parent="ImpendingDoom"]
 script = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ImpendingDoom/Area2D"]
-shape = SubResource( 8 )
+shape = SubResource( 6 )
 
 [node name="Levels" type="Node2D" parent="."]
 
@@ -165,13 +175,13 @@ modulate = Color( 1, 0, 0, 1 )
 position = Vector2( 652.891, 415.826 )
 scale = Vector2( 0.713988, 1.17521 )
 texture = ExtResource( 1 )
-script = SubResource( 6 )
+script = SubResource( 7 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Levels/Level/Spikes"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Levels/Level/Spikes/StaticBody2D"]
 position = Vector2( 1.51367, 0 )
-shape = SubResource( 4 )
+shape = SubResource( 8 )
 
 [node name="Area2D" type="Area2D" parent="Levels/Level/Spikes" groups=[
 "death_trigger",
@@ -179,5 +189,8 @@ shape = SubResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Levels/Level/Spikes/Area2D"]
 position = Vector2( -28.7592, 0.919617 )
-shape = SubResource( 5 )
+shape = SubResource( 9 )
+
+[node name="Boundaries" parent="Levels" instance=ExtResource( 6 )]
+position = Vector2( -1.00488, 4.50752 )
 [connection signal="body_entered" from="Levels/Level/Spikes/Area2D" to="Levels/Level/Spikes" method="_on_Area2D_body_entered"]

@@ -80,12 +80,23 @@ func _physics_process(delta):
 [sub_resource type="GDScript" id=11]
 script/source = "extends Node2D
 
-const DOOM_SPEED = 300
+const DOOM_SPEED_ONSCREEN = 60
+const DOOM_SPEED_OFFSCREEN = 300
+
 
 func _physics_process(delta):
 	var player = get_tree().get_nodes_in_group(\"player\")[0]
 	if player.is_dead: return
-	self.position.y += DOOM_SPEED * delta
+	
+	var camera = get_tree().get_nodes_in_group(\"camera\")[0]
+	print ( camera.position.y - self.position.y)
+	var on_screen = camera.position.y - self.position.y < get_viewport().size.y / 2
+	if on_screen:
+		print(\"onscreen\")
+		self.position.y += DOOM_SPEED_ONSCREEN * delta
+	else:
+		print(\"offscreen\")
+		self.position.y += DOOM_SPEED_OFFSCREEN * delta
 "
 
 [node name="Test" type="Node2D"]
@@ -115,7 +126,9 @@ randomness = 0.47
 process_material = SubResource( 3 )
 texture = ExtResource( 3 )
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="." groups=[
+"camera",
+]]
 position = Vector2( 513.566, -549.659 )
 current = true
 script = SubResource( 4 )

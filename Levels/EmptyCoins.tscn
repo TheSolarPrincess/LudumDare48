@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://BuildingBlocks/1Coin.tscn" type="PackedScene" id=1]
+[ext_resource path="res://BuildingBlocks/Hint.tscn" type="PackedScene" id=2]
 
 [node name="TestLevel" type="Node2D"]
 
@@ -39,3 +40,15 @@ position = Vector2( 774.86, 435.666 )
 
 [node name="1Coin7" parent="." instance=ExtResource( 1 )]
 position = Vector2( 774.86, 531.301 )
+
+[node name="Hint" parent="." instance=ExtResource( 2 )]
+margin_left = 356.0
+margin_top = 292.0
+margin_right = 654.0
+margin_bottom = 365.0
+
+[node name="Label2" parent="Hint" index="0"]
+margin_bottom = -5.0
+text = "Free coins!"
+
+[editable path="Hint"]

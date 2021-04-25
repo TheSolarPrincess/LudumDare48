@@ -38,6 +38,8 @@ func _physics_process(delta):
 		y_velocity = 5
 	if y_velocity >= MAX_FALL_SPEED:
 		y_velocity = MAX_FALL_SPEED
+	if is_on_ceiling() and y_velocity < -5:
+		y_velocity = -5
 	
 
 func die():

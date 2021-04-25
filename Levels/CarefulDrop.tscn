@@ -1,0 +1,61 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://BuildingBlocks/1Coin.tscn" type="PackedScene" id=1]
+[ext_resource path="res://BuildingBlocks/Spikes.tscn" type="PackedScene" id=2]
+[ext_resource path="res://BuildingBlocks/Ground.tscn" type="PackedScene" id=3]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Ground" parent="." instance=ExtResource( 3 )]
+position = Vector2( 197.89, 115.966 )
+
+[node name="Ground2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 816.503, 115.966 )
+
+[node name="Ground3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 66.1486, 317.874 )
+scale = Vector2( 0.430824, 0.140047 )
+
+[node name="Ground4" parent="." instance=ExtResource( 3 )]
+position = Vector2( 693.353, 317.874 )
+scale = Vector2( 1.68694, 0.140047 )
+
+[node name="Ground5" parent="." instance=ExtResource( 3 )]
+position = Vector2( 329.632, 492.575 )
+scale = Vector2( 1.68694, 0.140047 )
+
+[node name="Ground6" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1250.39, 489.711 )
+scale = Vector2( 1.68694, 0.140047 )
+
+[node name="Spikes" parent="." instance=ExtResource( 2 )]
+position = Vector2( 150.115, 316.71 )
+rotation = 1.5708
+scale = Vector2( 0.291242, 0.243789 )
+
+[node name="Spikes2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 318.804, 314.266 )
+rotation = -1.5708
+scale = Vector2( 0.27273, 0.227498 )
+
+[node name="Spikes4" parent="." instance=ExtResource( 2 )]
+position = Vector2( 708.952, 492.643 )
+rotation = 1.5708
+scale = Vector2( 0.291242, 0.243789 )
+
+[node name="Spikes3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 880.213, 491.914 )
+rotation = -1.5708
+scale = Vector2( 0.27273, 0.227498 )
+
+[node name="1Coin" parent="." instance=ExtResource( 1 )]
+position = Vector2( 249.177, 312.942 )
+
+[node name="1Coin2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 809.079, 490.507 )
+
+[node name="1Coin3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 511.229, 126.786 )
+
+[node name="1Coin4" parent="." instance=ExtResource( 1 )]
+position = Vector2( 491.181, 413.181 )

@@ -14,84 +14,77 @@ scale = Vector2( 2.01155, 0.140047 )
 position = Vector2( 575.203, 530.395 )
 scale = Vector2( 2.01155, 0.140047 )
 
-[node name="Spikes" parent="." instance=ExtResource( 1 )]
-position = Vector2( 166.714, 473.116 )
-
 [node name="Spikes2" parent="." instance=ExtResource( 1 )]
-position = Vector2( 245.095, 473.116 )
+position = Vector2( 242.08, 506.277 )
 
 [node name="Spikes4" parent="." instance=ExtResource( 1 )]
-position = Vector2( 328.486, 473.116 )
+position = Vector2( 322.456, 506.277 )
 
 [node name="Spikes3" parent="." instance=ExtResource( 1 )]
-position = Vector2( 406.868, 473.116 )
+position = Vector2( 400.838, 506.277 )
 
 [node name="Spikes8" parent="." instance=ExtResource( 1 )]
-position = Vector2( 485.827, 473.116 )
+position = Vector2( 479.797, 506.277 )
 
 [node name="Spikes7" parent="." instance=ExtResource( 1 )]
-position = Vector2( 564.209, 473.116 )
+position = Vector2( 558.179, 506.277 )
 
 [node name="Spikes6" parent="." instance=ExtResource( 1 )]
-position = Vector2( 647.6, 473.116 )
+position = Vector2( 641.57, 506.277 )
 
 [node name="Spikes5" parent="." instance=ExtResource( 1 )]
-position = Vector2( 725.982, 473.116 )
+position = Vector2( 719.952, 506.277 )
 
 [node name="Spikes16" parent="." instance=ExtResource( 1 )]
-position = Vector2( 809.373, 473.116 )
+position = Vector2( 803.343, 506.277 )
 
 [node name="Spikes15" parent="." instance=ExtResource( 1 )]
-position = Vector2( 887.755, 473.116 )
+position = Vector2( 881.725, 506.277 )
 
 [node name="Spikes14" parent="." instance=ExtResource( 1 )]
-position = Vector2( 971.146, 473.116 )
+position = Vector2( 965.116, 506.277 )
 
 [node name="Spikes13" parent="." instance=ExtResource( 1 )]
-position = Vector2( 1049.53, 473.116 )
+position = Vector2( 1043.5, 506.277 )
 
 [node name="Spikes12" parent="." instance=ExtResource( 1 )]
-position = Vector2( 1128.49, 473.116 )
+position = Vector2( 1122.46, 506.277 )
 
 [node name="Spikes11" parent="." instance=ExtResource( 1 )]
-position = Vector2( 1206.87, 473.116 )
+position = Vector2( 1200.84, 506.277 )
 
 [node name="Spikes10" parent="." instance=ExtResource( 1 )]
-position = Vector2( 1290.26, 473.116 )
+position = Vector2( 1284.23, 506.277 )
 
 [node name="Spikes9" parent="." instance=ExtResource( 1 )]
-position = Vector2( 1368.64, 473.116 )
+position = Vector2( 1362.61, 506.277 )
 
 [node name="Spikes24" parent="." instance=ExtResource( 1 )]
-position = Vector2( 315.19, 138.49 )
+position = Vector2( 309.161, 105.328 )
 rotation = 3.14159
 
 [node name="Spikes23" parent="." instance=ExtResource( 1 )]
-position = Vector2( 393.572, 138.49 )
+position = Vector2( 387.543, 105.328 )
 rotation = 3.14159
 
 [node name="Spikes22" parent="." instance=ExtResource( 1 )]
-position = Vector2( 476.963, 138.49 )
+position = Vector2( 470.934, 105.328 )
 rotation = 3.14159
 
 [node name="Spikes21" parent="." instance=ExtResource( 1 )]
-position = Vector2( 555.345, 138.49 )
+position = Vector2( 549.316, 105.328 )
 rotation = 3.14159
 
 [node name="Spikes20" parent="." instance=ExtResource( 1 )]
-position = Vector2( 634.304, 138.49 )
+position = Vector2( 628.275, 105.328 )
 rotation = 3.14159
 
 [node name="Spikes19" parent="." instance=ExtResource( 1 )]
-position = Vector2( 712.686, 138.49 )
+position = Vector2( 706.657, 105.328 )
 rotation = 3.14159
 
 [node name="Spikes18" parent="." instance=ExtResource( 1 )]
-position = Vector2( 796.077, 138.49 )
-rotation = 3.14159
-
-[node name="Spikes17" parent="." instance=ExtResource( 1 )]
-position = Vector2( 874.458, 138.49 )
+position = Vector2( 790.048, 105.328 )
 rotation = 3.14159
 
 [node name="Spikes32" parent="." instance=ExtResource( 1 )]
@@ -107,23 +100,23 @@ position = Vector2( -156.832, 138.49 )
 rotation = 3.14159
 
 [node name="Spikes29" parent="." instance=ExtResource( 1 )]
-position = Vector2( -78.4506, 138.49 )
+position = Vector2( -84.48, 105.328 )
 rotation = 3.14159
 
 [node name="Spikes28" parent="." instance=ExtResource( 1 )]
-position = Vector2( 0.508484, 138.49 )
+position = Vector2( -5.52087, 105.328 )
 rotation = 3.14159
 
 [node name="Spikes27" parent="." instance=ExtResource( 1 )]
-position = Vector2( 78.8902, 138.49 )
+position = Vector2( 72.8608, 105.328 )
 rotation = 3.14159
 
 [node name="Spikes26" parent="." instance=ExtResource( 1 )]
-position = Vector2( 162.281, 138.49 )
+position = Vector2( 156.252, 105.328 )
 rotation = 3.14159
 
 [node name="Spikes25" parent="." instance=ExtResource( 1 )]
-position = Vector2( 240.663, 138.49 )
+position = Vector2( 234.634, 105.328 )
 rotation = 3.14159
 
 [node name="1Coin" parent="." instance=ExtResource( 3 )]

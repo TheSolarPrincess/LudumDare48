@@ -8,6 +8,7 @@
 [ext_resource path="res://LevelBoundaries.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Graphics/Player.png" type="Texture" id=7]
 [ext_resource path="res://BuildingBlocks/Spikes.tscn" type="PackedScene" id=8]
+[ext_resource path="res://BuildingBlocks/Hint.tscn" type="PackedScene" id=9]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends Node2D
@@ -40,7 +41,8 @@ func generate_next_chunk():
 	
 	
 	var item = paths[randi() % paths.size()]
-	var level_prefab = load(\"res://Levels/\" + item)
+	#var level_prefab = load(\"res://Levels/\" + item)
+	var level_prefab = load(\"res://Levels/TreadCarefully.tscn\")
 	var level = level_prefab.instance()
 	$Levels.add_child(level)
 	level.position = Vector2(0, generation_sweep)
@@ -138,8 +140,6 @@ outline_size = 3
 outline_color = Color( 0, 0, 0, 0.905882 )
 font_data = ExtResource( 1 )
 
-[sub_resource type="StyleBoxFlat" id=15]
-
 [node name="Test" type="Node2D"]
 script = SubResource( 1 )
 
@@ -179,7 +179,7 @@ position = Vector2( 10.5762, -339.628 )
 scale = Vector2( 2.30244, 0.140047 )
 
 [node name="ImpendingDoom" type="Node2D" parent="."]
-position = Vector2( 0, 157.368 )
+position = Vector2( 0, 41.3339 )
 script = SubResource( 11 )
 
 [node name="Sprite" type="Sprite" parent="ImpendingDoom"]
@@ -326,27 +326,4 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Hint" type="Panel" parent="."]
-margin_left = 34.3722
-margin_top = 360.468
-margin_right = 332.372
-margin_bottom = 543.468
-custom_styles/panel = SubResource( 15 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label2" type="Label" parent="Hint"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_right = -4.0
-custom_fonts/font = SubResource( 14 )
-text = "Move: 
-A - D
-Jump\\Fly:
- W or SPACE"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="Hint" parent="." instance=ExtResource( 9 )]

@@ -41,12 +41,12 @@ position = Vector2( 674.498, 524.999 )
 position = Vector2( 309.918, 526.359 )
 
 [node name="Ground" parent="." instance=ExtResource( 4 )]
-position = Vector2( 225.575, 33.9035 )
-scale = Vector2( 0.968442, 0.063819 )
+position = Vector2( 154.366, 33.9035 )
+scale = Vector2( 0.656123, 0.063819 )
 
 [node name="Ground2" parent="." instance=ExtResource( 4 )]
-position = Vector2( 810.537, 33.9035 )
-scale = Vector2( 0.968442, 0.063819 )
+position = Vector2( 905.073, 33.9035 )
+scale = Vector2( 0.553811, 0.063819 )
 
 [node name="Ground3" parent="." instance=ExtResource( 4 )]
 position = Vector2( 529.233, 175.82 )

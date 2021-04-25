@@ -1,0 +1,43 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://BuildingBlocks/1Coin.tscn" type="PackedScene" id=2]
+[ext_resource path="res://BuildingBlocks/Spikes.tscn" type="PackedScene" id=3]
+[ext_resource path="res://BuildingBlocks/Ground.tscn" type="PackedScene" id=4]
+
+[node name="TestLevel" type="Node2D"]
+
+[node name="Ground" parent="." instance=ExtResource( 4 )]
+position = Vector2( 283.137, 225.713 )
+scale = Vector2( 0.786089, 0.0818352 )
+
+[node name="Ground2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 723.9, 380.866 )
+scale = Vector2( 0.904555, 0.0553753 )
+
+[node name="Ground3" parent="." instance=ExtResource( 4 )]
+position = Vector2( 288.127, 535.483 )
+scale = Vector2( 0.732241, 0.0818351 )
+
+[node name="Ground4" parent="." instance=ExtResource( 4 )]
+position = Vector2( 771.267, 105.136 )
+scale = Vector2( 0.775319, 0.0924191 )
+
+[node name="1Coin" parent="." instance=ExtResource( 2 )]
+position = Vector2( 767.561, 331.748 )
+
+[node name="1Coin2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 266.644, 159.864 )
+
+[node name="1Coin3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 760.194, 46.9125 )
+
+[node name="1Coin4" parent="." instance=ExtResource( 2 )]
+position = Vector2( 274.01, 481.532 )
+
+[node name="Spikes" parent="." instance=ExtResource( 3 )]
+position = Vector2( 820.354, 334.203 )
+rotation = -1.5708
+
+[node name="Spikes4" parent="." instance=ExtResource( 3 )]
+position = Vector2( 213.852, 476.621 )
+rotation = 1.5708

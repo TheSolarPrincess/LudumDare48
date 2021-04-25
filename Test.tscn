@@ -82,7 +82,7 @@ func _physics_process(delta):
 script/source = "extends Node2D
 
 const DOOM_SPEED_ONSCREEN = 60
-const DOOM_SPEED_OFFSCREEN = 200
+const DOOM_SPEED_OFFSCREEN = 260
 
 
 func _physics_process(delta):
@@ -339,10 +339,12 @@ __meta__ = {
 [node name="Label2" type="Label" parent="Hint"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = -1.0
+margin_right = -4.0
 custom_fonts/font = SubResource( 14 )
-text = "Move: A - D
-Jump: W or SPACE"
+text = "Move: 
+A - D
+Jump\\Fly:
+ W or SPACE"
 align = 1
 valign = 1
 __meta__ = {

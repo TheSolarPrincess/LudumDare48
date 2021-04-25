@@ -1,0 +1,40 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://BuildingBlocks/10Coin.tscn" type="PackedScene" id=1]
+[ext_resource path="res://BuildingBlocks/Ground.tscn" type="PackedScene" id=2]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Ground" parent="." instance=ExtResource( 2 )]
+position = Vector2( 533.807, 187.929 )
+scale = Vector2( 1.78115, 0.140047 )
+
+[node name="Ground2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 538.103, 329.694 )
+scale = Vector2( 0.0602689, 0.535074 )
+
+[node name="Ground3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 300.395, 318.238 )
+scale = Vector2( 0.782536, 0.140047 )
+
+[node name="Ground4" parent="." instance=ExtResource( 2 )]
+position = Vector2( 243.98, 458.572 )
+scale = Vector2( 1.03376, 0.140047 )
+
+[node name="Ground5" parent="." instance=ExtResource( 2 )]
+position = Vector2( 881.776, 323.966 )
+scale = Vector2( 1.03376, 0.140047 )
+
+[node name="Ground6" parent="." instance=ExtResource( 2 )]
+position = Vector2( 792.994, 465.732 )
+scale = Vector2( 0.782537, 0.12153 )
+
+[node name="Ground7" parent="." instance=ExtResource( 2 )]
+position = Vector2( 463.64, 389.369 )
+scale = Vector2( 0.0665499, 0.181237 )
+
+[node name="1Coin" parent="." instance=ExtResource( 1 )]
+position = Vector2( 408.369, 391.685 )
+
+[node name="1Coin2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 343.106, 387.474 )

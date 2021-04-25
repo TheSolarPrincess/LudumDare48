@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://BuildingBlocks/1Coin.tscn" type="PackedScene" id=1]
+[ext_resource path="res://BuildingBlocks/Ground.tscn" type="PackedScene" id=2]
+[ext_resource path="res://BuildingBlocks/Spikes.tscn" type="PackedScene" id=3]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Ground" parent="." instance=ExtResource( 2 )]
+position = Vector2( 458.171, 146.359 )
+scale = Vector2( 1.99767, 0.0659593 )
+
+[node name="Ground2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 568.667, 310.876 )
+scale = Vector2( 1.99767, 0.0659593 )
+
+[node name="Ground3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 455.715, 470.482 )
+scale = Vector2( 1.99767, 0.0659593 )
+
+[node name="1Coin" parent="." instance=ExtResource( 1 )]
+position = Vector2( 57.9286, 309.648 )
+
+[node name="1Coin2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 978.732, 145.131 )
+
+[node name="1Coin3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 966.454, 469.254 )
+
+[node name="Spikes" parent="." instance=ExtResource( 3 )]
+position = Vector2( 373.458, 281.41 )
+
+[node name="Spikes2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 449.577, 281.41 )
+
+[node name="Spikes3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 410.29, 438.561 )
+
+[node name="Spikes4" parent="." instance=ExtResource( 3 )]
+position = Vector2( 486.409, 438.561 )

@@ -1,0 +1,41 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://BuildingBlocks/1Coin.tscn" type="PackedScene" id=1]
+
+[node name="TestLevel" type="Node2D"]
+
+[node name="1Coin" parent="." instance=ExtResource( 1 )]
+position = Vector2( 208.809, 125.501 )
+
+[node name="1Coin2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 208.809, 200.458 )
+
+[node name="1Coin3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 208.809, 272.83 )
+
+[node name="1Coin4" parent="." instance=ExtResource( 1 )]
+position = Vector2( 208.809, 347.786 )
+
+[node name="1Coin5" parent="." instance=ExtResource( 1 )]
+position = Vector2( 208.809, 435.666 )
+
+[node name="1Coin6" parent="." instance=ExtResource( 1 )]
+position = Vector2( 208.809, 531.301 )
+
+[node name="1Coin12" parent="." instance=ExtResource( 1 )]
+position = Vector2( 774.86, 125.501 )
+
+[node name="1Coin11" parent="." instance=ExtResource( 1 )]
+position = Vector2( 774.86, 200.458 )
+
+[node name="1Coin10" parent="." instance=ExtResource( 1 )]
+position = Vector2( 774.86, 272.83 )
+
+[node name="1Coin9" parent="." instance=ExtResource( 1 )]
+position = Vector2( 774.86, 347.786 )
+
+[node name="1Coin8" parent="." instance=ExtResource( 1 )]
+position = Vector2( 774.86, 435.666 )
+
+[node name="1Coin7" parent="." instance=ExtResource( 1 )]
+position = Vector2( 774.86, 531.301 )

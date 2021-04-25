@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://BuildingBlocks/Spikes.tscn" type="PackedScene" id=3]
+[ext_resource path="res://BuildingBlocks/Ground.tscn" type="PackedScene" id=4]
+
+[node name="Bomb" type="Node2D"]
+
+[node name="Bomb" parent="." instance=ExtResource( 4 )]
+modulate = Color( 1, 0, 0, 1 )
+scale = Vector2( 0.0669545, 0.0650699 )
+
+[node name="Spikes" parent="Bomb" instance=ExtResource( 3 )]
+position = Vector2( -13.957, -413.513 )
+scale = Vector2( 2.39366, 1.74317 )
+
+[node name="Spikes2" parent="Bomb" instance=ExtResource( 3 )]
+position = Vector2( -4.77612, 402.127 )
+rotation = -3.14159
+scale = Vector2( 2.39366, 1.74317 )
+
+[node name="Spikes4" parent="Bomb" instance=ExtResource( 3 )]
+position = Vector2( 390.011, -7.29346 )
+rotation = 1.5708
+scale = Vector2( 2.46299, 1.6941 )
+
+[node name="Spikes3" parent="Bomb" instance=ExtResource( 3 )]
+position = Vector2( -399.562, -13.5405 )
+rotation = -1.5708
+scale = Vector2( 2.46299, 1.6941 )

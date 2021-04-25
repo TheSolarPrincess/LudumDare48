@@ -41,8 +41,8 @@ func generate_next_chunk():
 	
 	
 	var item = paths[randi() % paths.size()]
-	#var level_prefab = load(\"res://Levels/\" + item)
-	var level_prefab = load(\"res://Levels/TreadCarefully.tscn\")
+	var level_prefab = load(\"res://Levels/\" + item)
+	#var level_prefab = load(\"res://Levels/Trap.tscn\")
 	var level = level_prefab.instance()
 	$Levels.add_child(level)
 	level.position = Vector2(0, generation_sweep)
@@ -84,7 +84,7 @@ func _physics_process(delta):
 script/source = "extends Node2D
 
 const DOOM_SPEED_ONSCREEN = 60
-const DOOM_SPEED_OFFSCREEN = 260
+const DOOM_SPEED_OFFSCREEN = 200
 
 
 func _physics_process(delta):

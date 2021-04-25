@@ -7,12 +7,12 @@
 [node name="Node2D" type="Node2D"]
 
 [node name="Ground" parent="." instance=ExtResource( 3 )]
-position = Vector2( 528.475, 390.212 )
-scale = Vector2( 0.722375, 1.10812 )
+position = Vector2( 528.475, 503.263 )
+scale = Vector2( 0.722375, 0.620833 )
 
 [node name="Ground2" parent="." instance=ExtResource( 3 )]
-position = Vector2( 85.3171, 394.734 )
-scale = Vector2( 0.722375, 1.10812 )
+position = Vector2( 85.3171, 509.292 )
+scale = Vector2( 0.722375, 0.614336 )
 
 [node name="Ground3" parent="." instance=ExtResource( 3 )]
 position = Vector2( 971.634, 394.734 )
@@ -21,11 +21,8 @@ scale = Vector2( 0.722375, 1.10812 )
 [node name="Ground4" parent="." instance=ExtResource( 3 )]
 position = Vector2( 276.749, 617.82 )
 
-[node name="1Coin" parent="." instance=ExtResource( 2 )]
-position = Vector2( 302.374, 188.228 )
-
 [node name="1Coin2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 308.404, 287.713 )
+position = Vector2( 763.621, 393.227 )
 
 [node name="1Coin3" parent="." instance=ExtResource( 2 )]
 position = Vector2( 311.418, 390.212 )

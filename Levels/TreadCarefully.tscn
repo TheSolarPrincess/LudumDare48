@@ -1,0 +1,172 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://BuildingBlocks/Spikes.tscn" type="PackedScene" id=1]
+[ext_resource path="res://BuildingBlocks/Ground.tscn" type="PackedScene" id=2]
+[ext_resource path="res://BuildingBlocks/1Coin.tscn" type="PackedScene" id=3]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Ground" parent="." instance=ExtResource( 2 )]
+position = Vector2( 69.8734, 140.934 )
+scale = Vector2( 0.322187, 0.0244174 )
+
+[node name="Spikes" parent="." instance=ExtResource( 1 )]
+position = Vector2( 170.18, 171.259 )
+
+[node name="Spikes13" parent="." instance=ExtResource( 1 )]
+position = Vector2( 170.18, 171.259 )
+rotation = 3.14159
+
+[node name="Ground2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 277.484, 140.934 )
+scale = Vector2( 0.322187, 0.0244174 )
+
+[node name="Spikes2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 377.79, 171.259 )
+
+[node name="Spikes24" parent="." instance=ExtResource( 1 )]
+position = Vector2( 377.79, 171.259 )
+rotation = 3.14159
+
+[node name="Ground3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 487.427, 140.934 )
+scale = Vector2( 0.322187, 0.0244174 )
+
+[node name="Spikes3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 587.733, 171.259 )
+
+[node name="Spikes23" parent="." instance=ExtResource( 1 )]
+position = Vector2( 587.733, 171.259 )
+rotation = 3.14159
+
+[node name="Ground4" parent="." instance=ExtResource( 2 )]
+position = Vector2( 695.038, 140.934 )
+scale = Vector2( 0.322187, 0.0244174 )
+
+[node name="Spikes4" parent="." instance=ExtResource( 1 )]
+position = Vector2( 795.344, 171.259 )
+
+[node name="Spikes22" parent="." instance=ExtResource( 1 )]
+position = Vector2( 795.344, 171.259 )
+rotation = 3.14159
+
+[node name="Ground8" parent="." instance=ExtResource( 2 )]
+position = Vector2( 258.822, 322.885 )
+scale = Vector2( 0.322187, 0.0244174 )
+
+[node name="Spikes8" parent="." instance=ExtResource( 1 )]
+position = Vector2( 359.129, 353.21 )
+
+[node name="Spikes21" parent="." instance=ExtResource( 1 )]
+position = Vector2( 359.129, 353.21 )
+rotation = 3.14159
+
+[node name="Ground7" parent="." instance=ExtResource( 2 )]
+position = Vector2( 466.433, 322.885 )
+scale = Vector2( 0.322187, 0.0244174 )
+
+[node name="Spikes7" parent="." instance=ExtResource( 1 )]
+position = Vector2( 566.739, 353.21 )
+
+[node name="Spikes20" parent="." instance=ExtResource( 1 )]
+position = Vector2( 566.739, 353.21 )
+rotation = 3.14159
+
+[node name="Ground6" parent="." instance=ExtResource( 2 )]
+position = Vector2( 676.376, 322.885 )
+scale = Vector2( 0.322187, 0.0244174 )
+
+[node name="Spikes6" parent="." instance=ExtResource( 1 )]
+position = Vector2( 776.682, 353.21 )
+
+[node name="Spikes19" parent="." instance=ExtResource( 1 )]
+position = Vector2( 776.682, 353.21 )
+rotation = 3.14159
+
+[node name="Ground5" parent="." instance=ExtResource( 2 )]
+position = Vector2( 883.987, 322.885 )
+scale = Vector2( 0.322187, 0.0244174 )
+
+[node name="Spikes5" parent="." instance=ExtResource( 1 )]
+position = Vector2( 984.293, 353.21 )
+
+[node name="Spikes18" parent="." instance=ExtResource( 1 )]
+position = Vector2( 984.293, 353.21 )
+rotation = 3.14159
+
+[node name="Ground12" parent="." instance=ExtResource( 2 )]
+position = Vector2( 74.5387, 497.837 )
+scale = Vector2( 0.322187, 0.0244174 )
+
+[node name="Spikes12" parent="." instance=ExtResource( 1 )]
+position = Vector2( 174.845, 528.163 )
+
+[node name="Spikes17" parent="." instance=ExtResource( 1 )]
+position = Vector2( 174.845, 528.163 )
+rotation = 3.14159
+
+[node name="Ground11" parent="." instance=ExtResource( 2 )]
+position = Vector2( 282.149, 497.837 )
+scale = Vector2( 0.322187, 0.0244174 )
+
+[node name="Spikes11" parent="." instance=ExtResource( 1 )]
+position = Vector2( 382.456, 528.163 )
+
+[node name="Spikes16" parent="." instance=ExtResource( 1 )]
+position = Vector2( 382.456, 528.163 )
+rotation = 3.14159
+
+[node name="Ground10" parent="." instance=ExtResource( 2 )]
+position = Vector2( 492.093, 497.837 )
+scale = Vector2( 0.322187, 0.0244174 )
+
+[node name="Spikes10" parent="." instance=ExtResource( 1 )]
+position = Vector2( 592.399, 528.163 )
+
+[node name="Spikes15" parent="." instance=ExtResource( 1 )]
+position = Vector2( 592.399, 528.163 )
+rotation = 3.14159
+
+[node name="Ground9" parent="." instance=ExtResource( 2 )]
+position = Vector2( 699.703, 497.837 )
+scale = Vector2( 0.322187, 0.0244174 )
+
+[node name="Spikes9" parent="." instance=ExtResource( 1 )]
+position = Vector2( 800.009, 528.163 )
+
+[node name="Spikes14" parent="." instance=ExtResource( 1 )]
+position = Vector2( 800.009, 528.163 )
+rotation = 3.14159
+
+[node name="1Coin" parent="." instance=ExtResource( 3 )]
+position = Vector2( 780.181, 301.89 )
+
+[node name="1Coin2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 566.739, 303.057 )
+
+[node name="1Coin3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 364.96, 297.225 )
+
+[node name="1Coin4" parent="." instance=ExtResource( 3 )]
+position = Vector2( 171.346, 109.442 )
+
+[node name="1Coin5" parent="." instance=ExtResource( 3 )]
+position = Vector2( 381.289, 114.108 )
+
+[node name="1Coin6" parent="." instance=ExtResource( 3 )]
+position = Vector2( 591.232, 111.775 )
+
+[node name="1Coin7" parent="." instance=ExtResource( 3 )]
+position = Vector2( 801.176, 109.442 )
+
+[node name="1Coin8" parent="." instance=ExtResource( 3 )]
+position = Vector2( 178.344, 471.011 )
+
+[node name="1Coin9" parent="." instance=ExtResource( 3 )]
+position = Vector2( 385.955, 469.845 )
+
+[node name="1Coin10" parent="." instance=ExtResource( 3 )]
+position = Vector2( 598.23, 471.011 )
+
+[node name="1Coin11" parent="." instance=ExtResource( 3 )]
+position = Vector2( 805.841, 468.679 )

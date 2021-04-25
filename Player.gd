@@ -2,9 +2,10 @@ extends KinematicBody2D
 
 
 const MOVE_SPEED = 500
-const JUMP_ACCEL = 500
+const JUMP_ACCEL = 400
 const GRAVITY = 20
-const JUMP_CD = 0.3
+const JUMP_CD = 0.1
+const MAX_FALL_SPEED = 1000
 
 var y_velocity = 0
 var jump_cd = 0
@@ -35,6 +36,8 @@ func _physics_process(delta):
 		jump_cd = JUMP_CD
 	if grounded and y_velocity >= 5:
 		y_velocity = 5
+	if y_velocity >= MAX_FALL_SPEED:
+		y_velocity = MAX_FALL_SPEED
 	
 
 func die():
